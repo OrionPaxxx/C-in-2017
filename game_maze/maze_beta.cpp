@@ -2,6 +2,7 @@
 #include<vector>
 #include<ctime>
 #include<cstdlib>
+#include<conio.h>
 const char MM='A';
 using namespace std;
 void test_show_maze(vector<vector<char> >&);
@@ -10,10 +11,11 @@ void play_maze(vector<vector<char> >& maze);
 int main(void)
 {
     int lines,raws;
-    cout << "input lines.\n";
+    cout << "input lines.press 'enter' to confire input\n";
     cin >> lines;
-    cout << "input raws.\n";
+    cout << "input raws.press 'enter' to confire input\n";
     cin >> raws;
+	cout << "press any button to start";
     vector<vector<char> > maze(lines,vector<char>(raws));
     for(int i=0;i<lines;i++)
     {
@@ -68,7 +70,7 @@ void play_maze(vector<vector<char> >& maze)
     while(1)
     {
         char n;
-        n=cin.get();
+        n=getch();
         if(n=='a')
         {
             if(temp_r==1 || temp_r==0)
@@ -113,7 +115,7 @@ void play_maze(vector<vector<char> >& maze)
         test_show_maze(maze);
         if(temp_l==maze.size()-2 && temp_r==maze[1].size()-2)
             {
-                cout << "you are a motherfucker ginues.";
+                cout << "you win!!!!!";
                 break;
             }
     }
